@@ -15,7 +15,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+	    String userAgent = req.getHeader("user-agent");
         String userName = req.getParameter("uname");
         String password = req.getParameter("password");
 
@@ -24,15 +24,15 @@ public class LoginServlet extends HttpServlet {
         out.println("<html><body>");
 
         if(userName.equals("admin") && password.equals("password")){
-            out.println("Welcome Back Admin");
+            out.println("Welcome Back Admin!");
         }
-        else{
-
+        else {
             // vulnerable code
             Logger logger = LogManager.getLogger(com.example.log4shell.log4j.class);
-            logger.error(userName);
+            logger.error(userAgent); // log browser user agent!
+            // logger.error(userName);  // log username instead
 
-            out.println("<code> the password you entered was invalid, <u> we will log your information </u> </code>");
+            out.println("<code> Ur user agent has been logged loser >:P </code>");
         }
     }
 

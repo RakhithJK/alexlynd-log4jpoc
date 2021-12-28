@@ -50,6 +50,18 @@
             <artifactId>log4j-api</artifactId>
             <version>2.14.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun/deploy -->
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>deploy</artifactId>
+<!--            <scope>system</scope>-->
+            <version>1.8</version>
+<!--            <systemPath>/home/alex/log4j-shell-poc/vulnerable-application/deploy.jar</systemPath>-->
+
+        </dependency>
+
+
     </dependencies>
 
     <build>
